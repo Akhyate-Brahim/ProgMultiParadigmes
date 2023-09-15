@@ -1,11 +1,15 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 int main(){
-    int num1,num2,num3,num4,num5,num6,num7,num8,num9,num10;
-    cout << "enter 10 numbers seperated by spaces" << endl;
-    cin >> num1 >> num2 >> num3 >> num4 >> num5 >> num6 >> num7 >> num8 >> num9 >> num10;
-    int sum=num1+num2+num3+num4+num5+num6+num7+num8+num9+num10;
-    double moyenne=sum/10;
-    cout << "the sum : " <<sum<<"\nthe mean : "<<moyenne<<endl;
-    return 0;
+   ifstream inputFile("moyenne.txt");
+   int i=0;
+   int s=0;
+   int n;
+   cout <<"the numbers are in the moyenne.txt file"<<endl;
+   while (inputFile >> n && i<10){
+    s+=n;
+    i++;
+   }
+   cout << "the sum of these numbers is : " <<s<<"\nthe mean of these numbers is : "<<(double)s/i<<endl;
 }
