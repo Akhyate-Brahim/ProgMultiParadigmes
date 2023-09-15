@@ -1,4 +1,4 @@
-# TD1 - INTRODUCTION
+# TD0 - INTRODUCTION
 ## Review
 - ```cpp
     #include <iostream> and #include <string>
@@ -18,7 +18,7 @@ endl = end line
     ```
 - to compile and execute
 ```bash
-g++ -o palindrome palindrome.cpp
+g++ -W -Wall palindrome.cpp -o palindrome
 ./palindrome
 ```
 ## Exercise 1 - palindromes
