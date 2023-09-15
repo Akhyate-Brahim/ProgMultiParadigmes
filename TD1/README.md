@@ -18,6 +18,6 @@ endl = end line
     ```
 - to compile and execute
 ```bash
-g++ -o palindrome palindrome.cpp
+g++ -W -Wall palindrome.cpp -o palindrome
 ./palindrome
 ```
