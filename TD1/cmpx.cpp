@@ -2,18 +2,18 @@
 #include <vector>
 
 using namespace std;
-
-void cmpx(int &i,int &j){
+template<typename T>
+void cmpx(T &i,T &j){
     if (i > j){
-        int tmp;
+        T tmp;
         tmp=j;
         j=i;
         i=tmp;
     }
 }
-
-void insert(int n, vector<int> &vect){
-    for (int &element : vect) {
+template<typename T>
+void insert(T n, vector<T> &vect){
+    for (T &element : vect) {
         cmpx(element, n);
     }
     vect.push_back(n);
@@ -21,9 +21,9 @@ void insert(int n, vector<int> &vect){
 
 int main(){
     // lire les entiers et les trier
-    vector<int> vect;
-    vector<int> unsortedVect;
-    int i;
+    vector<string> vect;
+    vector<string> unsortedVect;
+    string i;
     cout << "print the numbers in your list. after each number press enter, when done press Ctrl+d "<<endl;
 
     while (cin >> i){
@@ -32,7 +32,7 @@ int main(){
     }
 
     // liste non trié
-        cout << "your initial list : " <<endl<<"[";
+    cout << "your initial list : " <<endl<<"[";
     for (int i=0;i<unsortedVect.size();i++){
         cout << unsortedVect.at(i)<<" ";
     }

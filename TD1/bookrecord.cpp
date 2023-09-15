@@ -7,19 +7,27 @@ struct Bookrecord{
     string nom;
     double somme;
 };
+ostream& operator<< (ostream&o,const Bookrecord &b){
+    o<<"nom : " << b.nom <<"\nsomme : " <<b.somme<<endl;;
+    return o;
+}
+istream& operator>> (istream& i,Bookrecord &b){
+    i >> b.nom >> b.somme;
+    return i;
+}
 
 int main(){
     ifstream inputFile("transactions.txt");
     vector<Bookrecord> transactions;
     Bookrecord transaction;
-    while (inputFile >> transaction.nom >> transaction.somme){
+    while (inputFile >> transaction){
         transactions.push_back(transaction);
     }
     // print transactions
     for (const Bookrecord &record : transactions) {
-        cout << "Nom: " << record.nom << ", Somme: " << record.somme << endl;
+        cout << record << endl;
     }
-    // print name of a client when done press Ctrl d
+    cout << "print name of a client when done press Ctrl d" << endl;
     string nomClient;
     while (cin >> nomClient){
         for (Bookrecord transact : transactions){
