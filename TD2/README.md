@@ -52,8 +52,32 @@ ostream& operator<<(ostream&o,Rat r) {// your code}
 
 ## Compilation
 
-```Unix
+```shell
 g++ -c rat.cpp --> rat.o
 g++ -c main_rat.cpp --> main_rat.o
 g++ rat.o main_rat.o -o main_rat.exec --> main_rat.exec
 ```
+
+## Makefile
+
+```makefile
+FLAG = -W -Wall
+CXX = g++
+
+main_rat.exec : rat.o main_rat.o
+    $(CXX) rat.o main_rat.o
+
+rat.o : rat.h rat.cpp
+    $(CXX) -c $(FLAG) rat.cpp
+
+main_rat.o : main_rat.cpp rat.h
+    $(CXX) -c $(FLAG) main_rat.cpp
+
+```
+then 
+```shell
+make main_rat.exe
+ou bien
+make
+```
+    
