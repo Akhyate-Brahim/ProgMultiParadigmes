@@ -1,6 +1,7 @@
-# HEADER FILES IN CPP
+# TD3
+## HEADER FILES IN CPP
 
-## The structure
+### The structure
 
 - rat.h (declarations)
 - rat.cpp (implementations)
@@ -33,7 +34,7 @@ ostream& operator<<(ostream&o,Rat r) {// your code}
 - the include statement is necessary
 - You need to indicate with Rat:: that you are defining the member functions of the Rat class, *friend functions are not member functions.*
 
-## Compilation
+### Compilation
 
 ```shell
 g++ -c rat.cpp --> rat.o
@@ -41,7 +42,7 @@ g++ -c main_rat.cpp --> main_rat.o
 g++ rat.o main_rat.o -o main_rat.exec --> main_rat.exec
 ```
 
-## Makefile
+### Makefile
 
 ```makefile
 FLAG = -W -Wall
@@ -64,3 +65,16 @@ ou bien
 make
 ```
     
+## Sous-classes
+Example:
+
+```cpp
+class Point{
+    public: 
+    enum Couleur{bleu,rouge};
+}
+
+main(){
+    Point::Couleur c = rouge;
+}
+```
