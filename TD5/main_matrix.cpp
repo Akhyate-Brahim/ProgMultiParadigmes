@@ -23,12 +23,15 @@ int main()
 
     OUT(mat0);
     OUT(mat1);
+
+
     OUT(mat1 == mat0);
 
     MSG(Assignments);
 
     EXEC(mat0 = mat1);
     OUT(mat0);
+
     OUT(mat1 == mat0);
     OUT(mat1 += mat1);
     OUT(mat1 -= mat1);
@@ -39,7 +42,6 @@ int main()
     OUT(mat0 + mat0);
     OUT(mat0 - mat0);
     OUT(mat0 * mat0);
-
     try
     {
         Matrix mat(10, 10);
@@ -60,7 +62,7 @@ int main()
     {
         cerr << "*** Bad dimensions" << endl;
     }
-    
+
     MSG (Subscript and transpose);
 
     Matrix mat2(3, 4);
@@ -77,7 +79,6 @@ int main()
 
     OUT(mat2.line(1));
     OUT(mat2.transpose().column(1));
-
     MVector mv(5, 2.5);
     Matrix mat3 = mv; // define conversion constructor
     OUT(mat3);
