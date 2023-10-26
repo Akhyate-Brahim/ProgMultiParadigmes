@@ -60,7 +60,7 @@ solution:
  Class Point{
     int x,y;
     public:
-    Poitn(int a, int b) : x(a), y(b){}
+    Point(int a, int b) : x(a), y(b){}
     // NO DEFAULT CONSTRUCTOR (without arguments)
  }
  class Segment{
