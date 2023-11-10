@@ -6,21 +6,26 @@ using namespace std;
 struct Element{
     int data;
     Element* next;
-    Element(int n) : data(n){}
+    Element(int n, Element* ptr=0) : data(n), next(ptr){}
 };
 
 class List{
-    Element* base;
+    Element* start;
+    Element* end;
     public:
-    List() : base(nullptr) {}
+    List() : start(0), end(0) {}
     void append(int i);
     void prepend(int i);
     bool is_empty();
     int get_first();
+    int get_last();
     class EmptyListException{};
     void insert(int i);
-
-    friend ostream& operator<<(ostream& o, List list);
+    void sort();
+    int get_middle_value();
+    int& max();
+    void mirror();
+    friend ostream& operator<<(ostream& o,const List& list);
 };
 
 #endif
