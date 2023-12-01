@@ -8,13 +8,13 @@ CXX = g++
 CXXFLAGS = -Wall -std=c++11
 
 # Source files
-SRC = list-copy.cpp main_LQS.cpp
+SRC = main_expr-ext.cpp
 
 # Header files
-HDR = common_defs.h list-copy.h pile.h file.h fileprior.h
+HDR = expr-abstract.h expr-concrete.h ternary.h variable.h
 
 # Target executable
-TARGET = main_LQS
+TARGET = main_expr-ext
 
 # Build rules
 all: $(TARGET)

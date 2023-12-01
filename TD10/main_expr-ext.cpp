@@ -14,7 +14,6 @@ using namespace std;
 #include "ternary.h"
 #include "variable.h"
 
-
 // e0 = 3
 Expr *pe0 = new Constant(3);
 
@@ -54,21 +53,21 @@ int main()
     cout << "e1 = "  << pe1->eval()  << endl;
     cout << "e2 = "  << pe2->eval()  << endl;
 
-    Expr *pelower = new Binary_Lower(e0, e1); // e0 < e1 returns 0 or 1
+    Expr *pelower = new Binary_Lower(pe1, pe0); // e0 < e1 returns 0 or 1
     cout << "elower = "  << pelower->eval()  << endl;
 
     Expr *pe3 = new Ternary_Conditional(pelower,
                      new Binary_Mod(new Constant(23), new Constant(4)),
                      new Constant(1));
     cout << "e3 = "  << pe3->eval()  << endl;
-   
+
 
     Variable_Ref *pv = new Variable_Ref("foo");
     cout << "pv = " << pv->eval() << endl; // on suppose que les variables valent zero par défaut
     Expr *pev = new Binary_Plus(pv, new Constant(1));
     Expr *pv1 = new Assignment(pv, pev);
     cout << "pv1 = " << pv1->eval() << endl;
-    
+   
     Expr *pe4 = new plusplus_prefix(pv);
     cout << "e4 = " << pe4->eval() << endl;
     cout << "pv = " << pv->eval() << endl;
